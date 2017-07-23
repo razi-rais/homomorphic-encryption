@@ -5,7 +5,7 @@
 * Documentation: http://python-paillier.readthedocs.io/en/stable
 
 This library requires bunch of dependencies that may be challenging to install specially if you're new to Linux. To save 
-myself some time I end up packaging it as docker container image. That made it easy run it on MacOS, Linux 
+myself some time I end up packaging it as docker container image (ubuntu:16.04). That made it easy run it on MacOS, Linux 
 and Windows (with nested virtualization enabled to run Linux container). Please do note that this is not an official docker image from the 
 vendor and I don't claim any ownership or responsibility.
 
