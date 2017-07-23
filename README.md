@@ -10,3 +10,10 @@ and Windows (with nested virtualization enabled). Please do note that this is no
 vendor and I don't claim any ownership or responsibility.
 
 * Docker Image | PHE Python Library: https://hub.docker.com/r/rbinrais/python-paillier
+
+**Example**
+
+```
+docker run --rm -it rbinrais/python-paillier:1.2.2 bash
+```
+
