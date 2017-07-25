@@ -83,3 +83,17 @@ private_key.decrypt(c_div_33)
 -1.393939393939394e-13
 ```
 
+## Simple Encrypted Arithmetic Library – SEAL
+Simple Encrypted Arithmetic Library – SEAL is an easy-to-use homomorphic encryption library, developed by researchers in the Cryptography Research Group at Microsoft Research. SEAL is written in C++11, and contains .NET wrappers for the public API.  
+
+* Download/Documentation: https://www.microsoft.com/en-us/research/project/simple-encrypted-arithmetic-library-seal-2 
+
+# Learning Resources 
+
+* A brief survey of Fully Homomorphic Encryption, computing on encrypted data: https://blog.quarkslab.com/a-brief-survey-of-fully-homomorphic-encryption-computing-on-encrypted-data.html
+* Fast Private Set Intersection from Homomorphic Encryption: https://eprint.iacr.org/2017/299
+* Homomorphic encryption application on FinancialCloud framework: http://ieeexplore.ieee.org/document/7850013
+* A protocol for verification of an auction without revealing bidvalues http://ac.els-cdn.com/S1877050910002991/1-s2.0-S1877050910002991-main.pdf?_tid=329bce50-7177-11e7-adca-00000aacb362&acdnat=1501014422_9b482e07b3f3fd2951dab8b4108109a3
+* Private Queries on Encrypted Genomic Data: https://eprint.iacr.org/2017/207.pdf
+
+
