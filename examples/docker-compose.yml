@@ -1,0 +1,17 @@
+version : '3'
+
+services:
+  client:
+    build:
+      context: ./client
+    image: pyclient:dev
+    ports:
+      - 5000:5000
+    depends_on:
+      - server
+  server:
+    build:
+      context: ./server
+    image: pyserver:dev
+    ports:
+      - 80:80
