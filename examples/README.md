@@ -14,6 +14,10 @@ docker-compose up
 ```
 curl -H "Content-Type: application/json" -X POST http://localhost:5000 -d @sample-input-for-post-request.json
 ```
+##### output
+```
+{"output": [40, 44]}
+```
 
 #### Postman
 
