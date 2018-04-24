@@ -13,7 +13,7 @@ docker-compose up
 #### CURL Command 
 ```
 curl -H "Content-Type: application/json" -X POST http://localhost:5000 -d @sample-input-for-post-request.json
-
+```
 
 #### Postman
 
