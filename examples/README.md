@@ -14,7 +14,8 @@ docker-compose up
 ```
 curl -H "Content-Type: application/json" -X POST http://localhost:5000 -d @sample-input-for-post-request.json
 ```
-##### output
+##### Output 
+Please note that actual output may vary as the server mulitples the input values with a random number. 
 ```
 {"output": [40, 44]}
 ```
