@@ -1,6 +1,14 @@
 version : '3'
 
 services:
+  clientui:
+    build:
+      context: ./client-ui
+    image: pyclient-ui:dev
+    ports:
+      - 7000:7000
+    depends_on:
+      - client
   client:
     build:
       context: ./client

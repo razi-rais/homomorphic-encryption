@@ -1,29 +1,23 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <title>Sample App - Homomorphic Encryption</title>
 
-   
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
-
-      <script type="text/javascript"
-              src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-      </script>
-      <script type="text/javascript">
+    <script type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    </script>
+    <script type="text/javascript">
 
   $(document).ready(function() {
     $("#btnSubmit").click(function(){
-
-        alert(document.getElementById('input_glu_level').value );
-        alert(document.getElementById('input_chl_level').value );
-
+        
           var obj = new Object();
                 obj.input = document.getElementById('input_glu_level').value+","+document.getElementById('input_chl_level').value;
                 obj.dns = "http://server"; //Change the dns if you change the naem of service inside docker-compose file.
-          
+          var input_json = JSON.stringify(obj);
           $.ajax({
                     type: 'post',
                       headers: {
@@ -43,35 +37,30 @@
             });
         });
 
-      </script>
-   
-  </head>
+    </script>
 
-  <body>
-
+</head>
+<body>
     <div class="container">
-      <div class="header">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <!-- <li role="presentation" class="active"><a href="#">Home</a></li> -->
-           </ul>
-        </nav>
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <!-- <li role="presentation" class="active"><a href="#">Home</a></li> -->
+                </ul>
+            </nav>
+        </div>
+        <div class="jumbotron">
+            <h1>Showcase of a simple homomorphic use case </h1>
+            <p class="lead"> Enter your results:</p>
+            <p> Glucose: <input id="input_glu_level" name="input_glu_level"> </p>
+            <p> Cholesterol: <input id="input_chl_level" name="input_chl_level"></p>
+            <p><a class="btn btn-lg btn-success" role="button" id="btnSubmit">Click here to check your risk level for (Type 1 Diabetes)</a></p>
+            <p class="lead" id="output_chl_level"></p>
+        </div>
 
-      </div>
-
-      <div class="jumbotron">
-        <h1>Showcase of a simple homomorphic use case </h1>
-        <p class="lead"> Enter your results:</p>
-       <p> Glucose: <input id="input_glu_level" name="input_glu_level"> </p>
-       <p> Cholesterol: <input id="input_chl_level" name="input_chl_level"></p>
-          <p><a class="btn btn-lg btn-success" role="button" id="btnSubmit">Click here to check your risk level for (Type 1 Diabetes)</a></p>
-        <p class="lead" id="output_chl_level"></p>
-      </div>
-   
-      <footer class="footer">
-        <p>&copy; Razi Rais - https://github.com/razi-rais/homomorphic-encryption/tree/master/examples</p>
-      </footer>
-
+        <footer class="footer">
+            <p>&copy; Razi Rais - https://github.com/razi-rais/homomorphic-encryption/tree/master/examples</p>
+        </footer>
     </div>
-  </body>
+</body>
 </html>
