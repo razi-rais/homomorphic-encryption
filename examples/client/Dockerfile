@@ -8,6 +8,7 @@ RUN apt-get update \
 && apt-get install libmpc-dev -y \
 && pip3 install phe \
 && pip3 install Flask-API \
+&& pip3 install flask_cors \
 && pip3 install requests
 
 COPY . /app

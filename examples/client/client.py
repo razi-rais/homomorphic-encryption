@@ -2,9 +2,11 @@ from phe import paillier
 import json
 from flask import request, url_for
 from flask_api import FlaskAPI, status, exceptions
+from flask_cors import CORS
 import requests
 
 app = FlaskAPI(__name__)
+cors = CORS(app, resources={r'/*': {"origins": '*'}})
 
 public_key, private_key = paillier.generate_paillier_keypair()
 
@@ -26,20 +28,25 @@ def serialize(data):
 @app.route("/", methods=['GET','POST'])
 def process():
 
-  if request.method == 'POST':
+  if (request.method == 'POST'):
 
+    
     data = request.json
-    numbers = [int(e) for e in data['input'].split(',')]
-    json_content = encrypt(numbers)
-    result = requests.post(data['dns'],json=json_content)
-    data = json.loads(result.text)
+    if data: 
 
-    #decryption
-    enc_nums  = [paillier.EncryptedNumber(public_key, int(x[0]), int(x[1])) for x in data['values']]
-    plain_nums = {}
-    plain_nums['output'] = [private_key.decrypt(x) for x in enc_nums]
-    results = json.dumps(plain_nums)
-    return results
+        print ("Input Data: ", data)
+
+        numbers = [int(e) for e in data['input'].split(',')]
+        json_content = encrypt(numbers)
+        result = requests.post(data['dns'],json=json_content)
+        data = json.loads(result.text)
+
+        #decryption
+        enc_nums  = [paillier.EncryptedNumber(public_key, int(x[0]), int(x[1])) for x in data['values']]
+        plain_nums = {}
+        plain_nums['output'] = [private_key.decrypt(x) for x in enc_nums]
+        results = json.dumps(plain_nums)
+        return results
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
