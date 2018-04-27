@@ -1,6 +1,6 @@
 
 ## Prequesites:
-* Docker (NOTE: Containers are Linux based but you should able to run them on Linux, OS X and Windows using Docker for Windows).
+* Docker (NOTE: Install Docker based on your OS. For Windows, use Docker for Windows since containers Linux based).
 
 ## Run
 The docker-compose command will build both client and server containers if they are not already present in docker registry. 
