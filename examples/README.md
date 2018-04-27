@@ -1,4 +1,9 @@
 
+#### Sample App UI
+
+[<img src="https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/sample-app-img1.png">](https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/sample-app-img1.png)
+
+
 ## Prequesites:
 * Docker (NOTE: Install Docker based on your OS. For Windows, use Docker for Windows since containers Linux based).
 
@@ -23,7 +28,3 @@ Please note that actual output may vary as the server mulitples the input values
 #### Postman
 
 [<img src="https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/postman.png">](https://https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/postman.png)
-
-#### Sample App
-
-[<img src="https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/sample-app-img1.png">](https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/sample-app-img1.png)
