@@ -32,7 +32,8 @@ All encryption operations use [n1analytics/python-paillier](https://github.com/n
 > NOTE: You can run the code available in the ```/examples``` . I would recommend using the instructions below, to get everything up and running quickly using Docker. This also helps you avoid installing Python paillier library locally which has number of depedencies.
 
 ## Prequesites:
-* Docker (NOTE: Install Docker version based on your OS. For Windows, please use Docker for Windows since this sample is leverages Linux Docker containers).
+
+Docker: Install [https://docs.docker.com/install](Docker) version based on your OS. For Windows, please use Docker for Windows since this sample use Linux based Docker containers.
 
 ## Run
 The docker-compose command will build both client and server containers if they are not already present in docker registry. 
@@ -41,6 +42,8 @@ The docker-compose command will build both client and server containers if they 
 docker-compose up
 ```
 ## Test
+
+You can totally bypass the client html application, and use  CURL or Postman to directly call client restful endpoint.
 
 #### CURL Command 
 ```
@@ -55,6 +58,16 @@ Please note that actual output may vary as the server mulitples the input values
 #### Postman
 
 [<img src="https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/postman.png">](https://https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/postman.png)
+
+### UI 
+
+Browse to the URL http://localhost:7000. You can change the port in docker-compose file from 7000 to something else. 
+Make sure you enter integters (no decimals are allowed) in the input fields and then press'Click here to check your risk level for (Type 1 Diabetes)' button. 
+
+You should see the results, comma seperated, and in plain text. 
+
+[<img src="https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/sample-app-img1.png">](https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/sample-app-img1.png)
+
 
 
 # More Resources
