@@ -18,16 +18,16 @@ In more practical use cases, you can think about server as a cloud computing pla
 [<img src="https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/sample-app-img1.png">](https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/sample-app-img1.png)
 
 
-## Technical
+## Technical Overview
 
-The client and server are implemented using Pyhton.
+The application has following components:
 
-* Client UI - Application front end based on on HTML and JQuery with Python Flask API on backend. The client application simply makes a RESTful call to a client api endpoint.
+* Client UI - Application front end based on on HTML and JQuery with Python Flask API on backend. The client application simply makes a RESTful call to a client api endpoint. The client UI runs on port 7000 on localhost by default.
 
-* Client API: RESTful endpoint that take JSON input, and then perform homomorphic encryption operations [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It then POST the cipher text in JSON format to server API endpoint.
+* Client API: RESTful endpoint that take JSON input, and then perform homomorphic encryption operations [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It then POST the cipher text in JSON format to server API endpoint. The client UI runs on port 5000 on localhost by default.
 
 * Server API: RESTful endpoint that takes JSON input and multiply the cipher text to a random integer (plain text).
-All encryption operations use [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It then send the response back in JSON format.  
+All encryption operations use [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It then send the response back in JSON format. The client UI runs on port 80 on localhost by default.
 
 > NOTE: You can run the code available in the ```/examples``` . I would recommend using the instructions below, to get everything up and running quickly using Docker. This also helps you avoid installing Python paillier library locally which has number of depedencies.
 
@@ -36,11 +36,17 @@ All encryption operations use [n1analytics/python-paillier](https://github.com/n
 Docker: Install [https://docs.docker.com/install](Docker) version based on your OS. For Windows, please use Docker for Windows since this sample use Linux based Docker containers.
 
 ## Run
-The docker-compose command will build both client and server containers if they are not already present in docker registry. 
+Launch the console (Cmd.exe on Windows, Terminal on Mac OSX and Linux). Run the docker-compose command shown below. It will build both the client and server containers, if they are not already present in your local docker registry. 
 
 ```
 docker-compose up
 ```
+
+Looking at the console, it should show all the containers running.
+
+[<img src="https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/sample-app-img2.png">](https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/sample-app-img2.png)
+
+
 ## Test
 
 You can totally bypass the client html application, and use  CURL or Postman to directly call client restful endpoint.
