@@ -20,10 +20,16 @@ In more practical use cases, you can think about server as a cloud computing pla
 
 ## Technical
 
-The client and server are implemented using Pyhton.  
+The client and server are implemented using Pyhton.
+
 * Client UI - Application front end based on on HTML and JQuery with Python Flask API on backend. The client application simply makes a RESTful call to a client api endpoint.
-* Client API: RESTful endpoint that take JSON input, and then perform homomorphic encryption operations [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It then send the cipher text in JSON format to server API endpoint.
-* Server API: End
+
+* Client API: RESTful endpoint that take JSON input, and then perform homomorphic encryption operations [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It then POST the cipher text in JSON format to server API endpoint.
+
+* Server API: RESTful endpoint that takes JSON input and multiply the cipher text to a random integer (plain text).
+All encryption operations use [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It then send the response back in JSON format.  
+
+#### NOTE: You can clone the code available in the ```/examples``` and then run it. I would recommend using the instructions below, to get everything up and running quickly using Docker. This also helps you avoid installing Python paillier library locally which has number of depedencies.
 
 ## Prequesites:
 * Docker (NOTE: Install Docker version based on your OS. For Windows, please use Docker for Windows since this sample is leverages Linux Docker containers).
