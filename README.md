@@ -22,12 +22,12 @@ In more practical use cases, you can think about server as a cloud computing pla
 
 The application has following components:
 
-* Client UI - Application front end based on on HTML and JQuery with Python Flask API on backend. The client application simply makes a RESTful call to a client api endpoint. The client UI runs on port 7000 on localhost by default.
+* Client UI - Application front end based on on HTML and JQuery with Python Flask API on backend. The client application simply makes a RESTful call to a client api endpoint. The client UI runs on localhost port 7000 by default.
 
-* Client API: RESTful endpoint that take JSON input, and then perform homomorphic encryption operations [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It then POST the cipher text in JSON format to server API endpoint. The client UI runs on port 5000 on localhost by default.
+* Client API -  RESTful endpoint that take JSON input, and then perform homomorphic encryption operations [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It then POST the cipher text in JSON format to server API endpoint. The client api runs on localhost port 5000 by default.
 
-* Server API: RESTful endpoint that takes JSON input and multiply the cipher text to a random integer (plain text).
-All encryption operations use [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It then send the response back in JSON format. The client UI runs on port 80 on localhost by default.
+* Server API -  RESTful endpoint that takes JSON input and multiply the cipher text to a random integer (plain text).
+All encryption operations use [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It then send the response back in JSON format. The server api runs on localhost port 80 by default.
 
 > NOTE: You can run the code available in the ```/examples``` . I would recommend using the instructions below, to get everything up and running quickly using Docker. This also helps you avoid installing Python paillier library locally which has number of depedencies.
 
