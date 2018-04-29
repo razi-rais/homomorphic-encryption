@@ -67,14 +67,13 @@ Please note that actual output may vary as the server mulitples the input values
 
 ### UI 
 
-Browse to the URL http://localhost:7000. You can change the port in docker-compose file from 7000 to something else. 
-Make sure you enter integters (no decimals are allowed) in the input fields and then press'Click here to check your risk level for (Type 1 Diabetes)' button. 
+Browse to the URL http://localhost:7000. Make sure you enter integters (no decimals are allowed) in the input fields, and then press *'Click here to check your risk level for (Type 1 Diabetes)'* button. 
 
 You should see the results, comma seperated, and in plain text. 
 
 [<img src="https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/sample-app-img1.png">](https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/sample-app-img1.png)
 
-
+You can change the port number from 7000 to something else, by changing the value of client-ui service port in the docker-compose file.
 
 # More Resources
 
