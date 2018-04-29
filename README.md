@@ -33,7 +33,7 @@ All encryption operations use [n1analytics/python-paillier](https://github.com/n
 
 ## Prequesites:
 
-Docker: Install [https://docs.docker.com/install](Docker) version based on your OS. For Windows, please use Docker for Windows since this sample use Linux based Docker containers.
+Install [Docker](https://docs.docker.com/install) version based on your OS. For Windows, please use Docker for Windows since this sample use Linux based Docker containers.
 
 ## Run
 Launch the console (Cmd.exe on Windows, Terminal on Mac OSX and Linux). Run the docker-compose command shown below. It will build both the client and server containers, if they are not already present in your local docker registry. 
