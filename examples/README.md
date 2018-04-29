@@ -20,8 +20,10 @@ In more practical use cases, you can think about server as a cloud computing pla
 
 ## Technical
 
-The client and server are implemented in pyhton using Flash API. 
-* Client UI - This is simple UI (based on HTML and JQuery) running on python Flask.
+The client and server are implemented using Pyhton.  
+* Client UI - Application front end based on on HTML and JQuery with Python Flask API on backend. The client application simply makes a RESTful call to a client api endpoint.
+* Client API: RESTful endpoint that take JSON input, and then perform homomorphic encryption operations [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It then send the cipher text in JSON format to server API endpoint.
+* Server API: End
 
 ## Prequesites:
 * Docker (NOTE: Install Docker version based on your OS. For Windows, please use Docker for Windows since this sample is leverages Linux Docker containers).
