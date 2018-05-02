@@ -1,18 +1,19 @@
 ## Overview 
-This is a very simple, but functional example of PHE (partial homomorphic encryption) to achieve higher level of Privacy. In this scenario, you participate in a healthcare research study which will perform computations on your glucose and cholesterol levels and then give you the resutls back. You like to participate, but you do have following concerns related to privacy:
+This is a very simple, but functional example of PHE (partial homomorphic encryption) to achieve a higher level of privacy. 
+
+In this scenario: You are a participant in a healthcare research study which will perform computations on your glucose and cholesterol levels and then give you the resutls back. However, you have following concerns related to privacy:
 
 * You don't want to reveal your health related information (e.g. glucose and cholesterol levels) to the research institute.
-* You want assurance that research institute will not able to extrapolate any information form the data. This means that in-case your data is leaked (e.g. case of data breach etc.) to 3rd party sources, your privacy still remain largely intact. 
+* You want assurance that research institute will not able to extrapolate any information form the data. This means that in-case your data is leaked (e.g. case of data breach etc.) to 3rd party sources, your privacy still remains largely intact. 
 
-This is a cananocial use case where homomorphic encryption make sense. Let's start with higher level workflow and then bit more discussion on technical design of the application.
+This is a cananocial use-case where homomorphic encryption makes sense. Let's start with higher level workflow, and then bit more discussion on technical design of the application.
 
 ### High Level Flow
-You are provided with a simple input form where you enter your glucose and cholesterol levels (for this example, you can only enter integers). Thse values are senstive, and you don't want to reveal them to anyone else. These integter values are encrypted on the client side and then send to the server (running research institute based computation logic) for processing. 
+You are provided with a simple input form where you enter your glucose and cholesterol levels (for this example, you can only enter integers). These values are senstive, and you don't want to reveal them to anyone else. These integter values are encrypted on the client-side and then are sent to the server (running research institute based computation logic) for processing. 
 
-Server will take the input values (cipher text/encrypted data) and then perform some "useful computation" on them. In this case, the input values are multiplied by a random digit to simulate a useful computation on the encrypted data on server side. The results are then send back to the client. At no point, data was decrypted on the server, 
-so client privacy was retained throughtout the transaction. 
+The server will take the input values (cipher text/encrypted data) and then perform some "useful computation" on them. In this case, the input values are multiplied by a random digit to simulate a useful computation on the encrypted data on server side. The results are then sent back to the client. At no point was data was decrypted on the server, so client privacy was retained throughtout the transaction. 
 
-In more practical use cases, you can think about server as a cloud computing platfrom doing some more advance operations on client data. 
+In more practical use cases, you can think about the server as a cloud computing platfrom doing some more advance operations on client data. 
 
 
 [<img src="https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/sample-app-img1.png">](https://github.com/razi-rais/homomorphic-encryption/blob/master/examples/images/sample-app-img1.png)
@@ -22,14 +23,14 @@ In more practical use cases, you can think about server as a cloud computing pla
 
 The application has following components:
 
-* Client UI - Application front end based on on HTML and JQuery with Python Flask API on backend. The client application simply makes a RESTful call to a client api endpoint. The client UI runs on localhost port 7000 by default.
+* Client UI - Application front-end based on on HTML and JQuery with Python Flask API on back-end. The client application simply makes a RESTful call to a client API endpoint. The client UI runs on localhost port 7000 by default.
 
-* Client API -  RESTful endpoint that take JSON input, and then perform homomorphic encryption operations [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It then POST the cipher text in JSON format to server API endpoint. The client api runs on localhost port 5000 by default.
+* Client API -  RESTful endpoint that take JSON input, and then performs homomorphic encryption operations [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It will then POST the cipher text in JSON format to server API endpoint. The client api runs on localhost port 5000 by default.
 
-* Server API -  RESTful endpoint that takes JSON input and multiply the cipher text to a random integer (plain text).
-All encryption operations use [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It then send the response back in JSON format. The server api runs on localhost port 80 by default.
+* Server API -  RESTful endpoint that takes JSON input and multiplies the cipher text to a random integer (plain text).
+All encryption operations use the [n1analytics/python-paillier](https://github.com/n1analytics/python-paillier) library. It then sends the response back in JSON format. The server API runs on localhost port 80 by default.
 
-> NOTE: You can run the code available in the ```/examples``` . I would recommend using the instructions below, to get everything up and running quickly using Docker. This also helps you avoid installing Python paillier library locally which has number of depedencies.
+> NOTE: You can run the code available in the ```/examples``` . I would recommend using the instructions below to get everything up and running quickly using Docker. This also helps you avoid installing Python paillier library locally, which has number of depedencies.
 
 ## Prequesites:
 
@@ -49,14 +50,14 @@ Looking at the console, it should show all the containers running.
 
 ## Test
 
-You can totally bypass the client html application, and use  CURL or Postman to directly call client restful endpoint.
+You can totally bypass the client html application and use CURL or Postman to directly call client restful endpoint.
 
 #### CURL Command 
 ```
 curl -H "Content-Type: application/json" -X POST http://localhost:5000 -d @sample-input-for-post-request.json
 ```
 ##### Output 
-Please note that actual output may vary as the server mulitples the input values with a random number. 
+Please note that the actual output may vary as the server mulitples the input values with a random number. 
 ```
 {"output": [40, 44]}
 ```
@@ -81,10 +82,10 @@ You can change the port number from 7000 to something else, by changing the valu
 * Source: https://github.com/n1analytics/python-paillier
 * Documentation: http://python-paillier.readthedocs.io/en/stable
 
-This library requires bunch of dependencies that may be challenging to install specially if you're new to Linux. To save 
-myself some time I end up packaging it as docker container image (ubuntu:16.04). That made it easy run it on MacOS, Linux 
-and Windows (with nested virtualization enabled to run Linux container). Please do note that this is not an official docker image from the 
-vendor and I don't claim any ownership or responsibility.
+This library requires a bunch of dependencies that may be challenging to install, especially if you're new to Linux. To save 
+myself some time, I ended up packaging it as docker container image (ubuntu:16.04). That made it easy run it on MacOS, Linux 
+and Windows (with nested virtualization enabled to run Linux container). Please do note, this is not an official docker image from the 
+vendor, and I don't claim any ownership or responsibility.
 
 * Docker Image | PHE Python Library: https://hub.docker.com/r/rbinrais/python-paillier
 
