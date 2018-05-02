@@ -1,5 +1,6 @@
-![Demo - Improved Privacy Using Homomorphic Encryption](https://i.ytimg.com/vi/bCnIoBuWfGk/maxresdefault.jpg)
-[YouTube Video | Improved Privacy Using Homomorphic Encryption](https://www.youtube.com/watch?v=bCnIoBuWfGk "Demo | Improved Privacy Using Homomorphic Encryption")
+![Demo - Improved Privacy Using Homomorphic Encryption](https://img.youtube.com/vi/bCnIoBuWfGk/maxresdefault.jpg)
+[Youtube - Demo | Improved Privacy Using Homomorphic Encryption](https://www.youtube.com/watch?v=bCnIoBuWfGk)
+
 
 ## Overview 
 This is a very simple, but functional example of PHE (partial homomorphic encryption) to achieve a higher level of privacy. 
