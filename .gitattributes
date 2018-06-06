@@ -1,1 +1,1 @@
-*.py linguist-language=Python
+examples/* linguist-documentation=false
