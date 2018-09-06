@@ -4,7 +4,7 @@ services:
   clientui:
     build:
       context: ./client-ui
-    image: pyclient-ui:dev
+    image: pyclient-ui:v1
     ports:
       - 7000:7000
     depends_on:
@@ -12,7 +12,7 @@ services:
   client:
     build:
       context: ./client
-    image: pyclient:dev
+    image: pyclient:v1
     ports:
       - 5000:5000
     depends_on:
@@ -20,6 +20,6 @@ services:
   server:
     build:
       context: ./server
-    image: pyserver:dev
+    image: pyserver:v1
     ports:
       - 80:80

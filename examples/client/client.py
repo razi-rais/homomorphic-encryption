@@ -2,6 +2,7 @@ from phe import paillier
 import json
 from flask import request, url_for
 from flask_api import FlaskAPI, status, exceptions
+from flask import send_from_directory
 from flask_cors import CORS
 import requests
 
@@ -47,6 +48,10 @@ def process():
         plain_nums['output'] = [private_key.decrypt(x) for x in enc_nums]
         results = json.dumps(plain_nums)
         return results
+
+@app.route("/css/<path:filename>")
+def send_file(filename):  
+    return send_from_directory('css', filename)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
