@@ -170,6 +170,12 @@ Simple Encrypted Arithmetic Library – SEAL is an easy-to-use homomorphic encry
 
 * Download/Documentation: https://www.microsoft.com/en-us/research/project/simple-encrypted-arithmetic-library/
 
+
+
+![Conversation with Kim Laine about SEAL](https://img.youtube.com/vi/280_1798Ej4/maxresdefault.jpg)
+[Conversation with Kim Laine about SEAL](https://www.youtube.com/watch?v=280_1798Ej4)
+
+
 # Learning Resources 
 * Homomorphic Encryption Standardization Workshop (White Papers)  : http://homomorphicencryption.org/white-papers/
 * A brief survey of Fully Homomorphic Encryption, computing on encrypted data: https://blog.quarkslab.com/a-brief-survey-of-fully-homomorphic-encryption-computing-on-encrypted-data.html
